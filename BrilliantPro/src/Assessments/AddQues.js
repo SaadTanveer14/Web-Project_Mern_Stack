@@ -29,12 +29,41 @@ export default function Add() {
                 {Option4: option4,correctoption4:correctoption4}
             ]
         })
+
+        // var data= {
+        //     Statement:statement,
+        //     Options:[
+        //         {Option1: option1,correctoption1:correctoption1},
+        //         {Option2: option2,correctoption2:correctoption2},
+        //         {Option3: option3,correctoption3:correctoption3},
+        //         {Option4: option4,correctoption4:correctoption4}
+        //     ]
+        //   }
+
+        //   console.log(data)
+
+
+    }
+
+    const assessmentHandler = (event)=>{
+        event.preventDefault();
+        fetch('http://localhost:3000/addAssess', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            // We convert the React state to JSON and send it as the POST body
+            body: JSON.stringify(questions)
+        }).then(function(response) {
+            console.log(response)
+            return response.json();
+        });
+        
         console.log(questions)
 
     }
     
 	return(
         <div className="container" id="newVeh" >
+        
         <br />
         
         <br />
@@ -72,10 +101,13 @@ export default function Add() {
             <Form.Control type="text" placeholder="Enter Option " value={option4} onChange={(e)=>setoption4(e.target.value)}/>
             <Form.Select value={correctoption4} onChange={(e)=>setcorrectoption4(e.target.value)}><option value="" disabled>Select Possible Answer</option><option value="false">False</option><option value="true">True</option></Form.Select>
             <br />
-            <Button type="submit" >Submit</Button>
+            <div style={{display: "inline-block",}}>
+                <Button type="submit" >Add Questions</Button>
+                <Button variant="primary" size="lg" style={{ backgroundColor:"green"}} type="submit" onClick={assessmentHandler}>Add Assessment</Button>
+            </div>
+
             
             {/* {console.log(questions)} */}
-
             
         </form> 
         </div>
