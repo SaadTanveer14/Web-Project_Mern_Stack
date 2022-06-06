@@ -1,0 +1,58 @@
+[
+    {
+      "name": "Artificial Intelligence",
+      "overview": "Very Nice",
+      "image1": "./assets/ai.jpg",
+      "deadline": "December 1, 2022",
+      "start_date": "January 1, 2023",
+      "end_date": "June 1, 2023"
+    },
+
+    {
+        "name": "Machine Learning",
+        "overview": "Very Nice",
+        "image1": "./assets/ml.jpg",
+        "deadline": "December 1, 2022",
+        "start_date": "January 1, 2023",
+        "end_date": "June 1, 2023"
+    },
+
+    {
+        "name": "Natural Language Processing",
+        "overview": "Very Nice",
+        "image1": "./assets/nlp.jpg",
+        "deadline": "December 1, 2022",
+        "start_date": "January 1, 2023",
+        "end_date": "June 1, 2023"
+    },
+
+    {
+        "name": "Web Programming",
+        "overview": "Very Nice",
+        "image1": "./assets/web1.jpg",
+        "deadline": "December 1, 2022",
+        "start_date": "January 1, 2023",
+        "end_date": "June 1, 2023"
+    },
+
+    {
+        "name": "Ethical Hacking",
+        "overview": "Very Nice",
+        "image1": "./assets/EH.jpg",
+        "deadline": "December 1, 2022",
+        "start_date": "January 1, 2023",
+        "end_date": "June 1, 2023"
+    },
+
+    {
+        "name": "Block Chain Technology",
+        "overview": "Very Nice",
+        "image1": "./assets/BC.png",
+        "deadline": "December 1, 2022",
+        "start_date": "January 1, 2023",
+        "end_date": "June 1, 2023"
+    }
+    
+  
+
+  ]

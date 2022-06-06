@@ -1,0 +1,104 @@
+h6{
+    color: rgb(118, 118, 118); 
+ }
+ h5{
+     color: rgb(62, 203, 62);
+ }
+ 
+ .greysmall{
+     font-size: 11px;
+     padding-right: 10px;
+     color: rgb(118, 118, 118); 
+ }
+ .leftpad{
+     padding-left: 30px;
+ }
+ .rightmargin{
+     margin-right: 1%;
+ }
+ 
+ .bottommargin{
+     margin-bottom: 1%;
+ }
+ 
+ .star{
+     /* fill: yellow; */
+     filter:invert(95%) sepia(8%) saturate(6102%) hue-rotate(354deg) brightness(103%) contrast(105%);
+ }
+ 
+ #nav
+ {
+     margin-bottom: 60px;
+ }
+ label{
+     color: rgb(21, 21, 166);
+     font-weight: 550;
+ }
+ 
+ #rowpadding{
+     padding-bottom: 20px;
+ }
+ 
+ button{
+     background-color: rgb(61, 206, 61);
+     border: none;
+     width: 100px;
+ }
+ 
+ 
+ .down{
+     font-weight: 600;
+     font-size: 14px;
+     cursor:default;
+     /* color: #bde2fc; */
+     filter: invert(50%) sepia(89%) saturate(1391%) hue-rotate(180deg) brightness(93%) contrast(96%);
+ }
+ 
+ .down:hover{
+ 
+     /* color: #0f3148; */
+     filter: invert(14%) sepia(41%) saturate(898%) hue-rotate(160deg) brightness(99%) contrast(95%);    
+ }
+ 
+ .detailicons
+ {
+     height: 36px;
+     width: 38px;
+     color: #808080;
+     filter:invert(57%) sepia(12%) saturate(13%) hue-rotate(347deg) brightness(86%) contrast(86%);
+ }
+ 
+ .blur{
+     filter: blur(4px);
+ }
+ 
+ 
+ 
+ .addicon{
+     display: inline-block;
+     /* margin-right: center; */
+     margin-right: 40%;
+ }
+ 
+ 
+ .addicondel{
+     display: inline-block;
+     /* margin-right: center; */
+     /* margin-right: 20%; */
+ }
+ 
+ 
+ .addiconsize{
+     font-size: 48px;
+     color:#cbcaca
+ }
+ 
+ .delicon{
+     font-size: 30px;
+     color: rgb(199, 20, 20);
+ }
+
+ .buttcol{
+     background-color: rgb(29, 190, 29);
+     outline: none;
+ }
