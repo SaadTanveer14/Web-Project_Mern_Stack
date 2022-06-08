@@ -20,6 +20,9 @@ import Index from "views/Index.js";
 import Test from "test.js"
 import App from "App.js"
 import Assessments from "Assessments/Assessments.js"
+import Materials from "Material/Materials.js"
+import addMaterial from "Material/addMaterial.js"
+import showAssessments from "Assessments/showAssessments"
 
 
 ReactDOM.render(
@@ -36,6 +39,9 @@ ReactDOM.render(
       <Route path="/material" exact component={MaterialDash}></Route>
       <Route path="/Assessments" exact component={Assessments}></Route>
       <Route path="/addAssess" exact component={AddAssess}></Route>
+      <Route path="/Materials" exact component={Materials}></Route>
+      <Route path="/addMaterial" exact component={addMaterial}></Route>
+      <Route path="/showAssessments" exact component={showAssessments}></Route>
       {/* add redirect for first page */}
       <Redirect from="*" to="/" />
     </Switch>

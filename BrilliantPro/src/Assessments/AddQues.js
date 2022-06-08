@@ -8,6 +8,8 @@ export default function Add() {
     const[option1,setoption1]=useState("");
     const[correctoption1,setcorrectoption1]=useState("");
 
+    const[name,setAssemment]=useState("");
+
     const[option2,setoption2]=useState("");
     const[correctoption2,setcorrectoption2]=useState("");
 
@@ -44,6 +46,10 @@ export default function Add() {
 
 
     }
+    var Assess={
+        name:name,
+        questions:questions
+    }
 
     const assessmentHandler = (event)=>{
         event.preventDefault();
@@ -51,7 +57,7 @@ export default function Add() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             // We convert the React state to JSON and send it as the POST body
-            body: JSON.stringify(questions)
+            body: JSON.stringify(Assess)
         }).then(function(response) {
             console.log(response)
             return response.json();
@@ -68,12 +74,15 @@ export default function Add() {
         
         <br />
       <div className="card" >
+            <Form.Label>Assessments</Form.Label>
+            <Form.Control type="text" placeholder="Enter Assessment name" value={name} onChange={(e)=>setAssemment(e.target.value)}/>
         
         <div className="card-body">
+            
             <form onSubmit={fromhandler}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Enter Question statement</Form.Label>
-                <Form.Control type="text" placeholder="Enter Course Name" value={statement} onChange={(e)=>setstatement(e.target.value)}/>
+                <Form.Control type="text" placeholder="Enter Question Statement" value={statement} onChange={(e)=>setstatement(e.target.value)}/>
                 <Form.Text className="text-muted" >
                     Enter only one course name
                 </Form.Text>

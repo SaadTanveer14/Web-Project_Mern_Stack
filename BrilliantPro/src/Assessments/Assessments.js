@@ -43,7 +43,7 @@ export default function  Assessment
                 
               
                 <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
-                <Link to="/Assessments">
+                <Link to="/showAssessments">
                 <CardStats
                   statSubtitle="View Assessments"
                   

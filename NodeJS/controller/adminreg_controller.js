@@ -2,10 +2,10 @@ const express = require('express');
 var router = express.Router();
 var ObjectId = require('mongoose').Types.ObjectId;
 
-var { Assessment } = require('../models/assessmentdetails.js');
+var { adminReg } = require('../models/admindetail');
 
 router.get('/' , (req,res)=>{
-    Assessment.find((err,docs)=>{
+    adminReg.find((err,docs)=>{
         if(!err){ 
             res.send(docs);
             console.log("Data successfully sent")
@@ -20,14 +20,14 @@ router.get('/' , (req,res)=>{
 
 
 router.post('/',(req,res)=>{
-    var assessment=new Assessment({
-    name:       req.body.name,   
-    questions:  req.body.questions 
-    // Options:         req.body.Options,
+    var adminreg=new adminReg({
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password
 
     })
-    console.log(assessment)
-    assessment.save(('/',(err,doc)=>{
+    console.log(adminreg)
+    adminreg.save(('/',(err,doc)=>{
         if(!err){
             console.log(doc)
             res.send(doc)

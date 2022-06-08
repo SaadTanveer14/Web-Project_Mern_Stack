@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 // import cou from './ai.jpg'
 // import Record from './record.json';
 import React from 'react';
@@ -72,6 +72,15 @@ export default function Courses(){
   // var imi=require(ima).default
   const [view, changeView] = useState(0);
 
+  const [record,setRecord] = useState([])
+
+  useEffect(() => {
+    Axios.get('http://localhost:3000/course').then((response) => {
+      setRecord(response.data) 
+      // console.log(response.data)
+  });
+}, [])
+
   const [name,setName]=useState("");
   const [description,setDescription]=useState("");
   const [picture,setPicture]=useState("");
@@ -138,6 +147,7 @@ export default function Courses(){
   if(view===0)
   {
 
+    // console.log(record)
     
     return(
       <div className="container">
@@ -166,7 +176,7 @@ export default function Courses(){
                   </div>
               </div>
 
-        {Record.map(course=>{
+        {record.map(course=>{
                   return(
                   
               <div key={course.name} className="col" onClick={()=>changeView(view+1)}>

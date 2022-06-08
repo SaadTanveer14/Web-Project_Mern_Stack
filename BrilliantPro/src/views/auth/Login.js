@@ -1,7 +1,42 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import {useState} from 'react'
+import { useHistory} from 'react-router-dom'
 export default function Login() {
+  const [email,setEmail]= useState("");
+  const [password,setPassoword] = useState("");
+  const history=useHistory()
+
+
+
+  const LoginHandler=(event)=>{
+    event.preventDefault();
+    fetch("http://localhost:3000/login",{
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:JSON.stringify({
+          
+          email:email,
+          password:password
+
+        })
+      }
+     
+    ).then(function(response) {
+      console.log(response)
+      if(response.status===200)
+      {
+        alert("Account Logged in Successfully")
+        history.push('/admin/Dashbord')
+      }
+      else{
+        alert("Account Login failed")
+      }
+      return response.json();
+    })
+ 
+  
+  }
   return (
     <>
       <div className="container mx-auto px-4 h-full">
@@ -56,6 +91,8 @@ export default function Login() {
                       type="email"
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Email"
+                      value={email}
+                      onChange={(e)=>setEmail(e.target.value)}
                     />
                   </div>
 
@@ -70,6 +107,8 @@ export default function Login() {
                       type="password"
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Password"
+                      value={password}
+                      onChange={(e)=>setPassoword(e.target.value)}
                     />
                   </div>
                   <div>
@@ -86,7 +125,7 @@ export default function Login() {
                   </div>
 
                   <div className="text-center mt-6">
-                    <button
+                    <button onClick={LoginHandler}
                       className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                       type="button"
                     >
