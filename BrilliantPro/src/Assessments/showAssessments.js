@@ -35,7 +35,7 @@ export default function  ShowAssessment
           
           return(
               
-              <div key={assessment.name} className="px-4 md:px-10 mx-auto w-full" onClick={()=>changeView(view+1)}>
+              <div key={assessment.name} className="px-4 md:px-10 mx-auto w-full" onClick={()=>{changeView(view+1);setCurrentassign(assessment)}}>
               <br /><br />
             
               <div className="flex flex-wrap">
@@ -59,7 +59,10 @@ export default function  ShowAssessment
   }else if(view===1)
   {
     return(
-        <div>heading</div>
+        <div>
+            heading
+            {console.log(currentassign)}
+        </div>
     )
     
   }
